@@ -14,7 +14,8 @@ const payouts = [
 export function Payouts() {
   const loop = [...payouts, ...payouts];
   return (
-    <section className="py-20 lg:py-28">
+    <section className="relative py-20 lg:py-28 bg-surface-alt">
+      <div aria-hidden className="divider-gold absolute top-0 left-0 right-0" />
       <div className="container mx-auto px-4 mb-12 text-center">
         <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium mb-4">
           <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
@@ -30,8 +31,8 @@ export function Payouts() {
 
       <div className="relative overflow-hidden">
         {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[var(--surface-alt)] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[var(--surface-alt)] to-transparent" />
 
         <div className="flex gap-4 animate-scroll-x w-max">
           {loop.map((p, i) => (
