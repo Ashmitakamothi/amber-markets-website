@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-amber.png";
+import { ThemeToggle } from "@/components/theme-provider";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -14,25 +15,22 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 glass-strong border-b border-border/50">
+    <header className="sticky top-0 z-40 glass-strong">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Amber Markets" className="h-9 w-auto" />
+        <Link to="/" className="flex items-center gap-2 logo-halo">
+          <img src={logo} alt="Amber Markets" className="h-10 w-auto logo-img" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-gold"
-            >
+            <a key={l.label} href={l.href} className="nav-link text-sm font-medium">
               {l.label}
             </a>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           <button className="rounded-lg px-4 py-2 text-sm font-medium text-foreground/90 transition hover:text-gold">
             Login
           </button>
@@ -41,13 +39,16 @@ export function Navbar() {
           </button>
         </div>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden rounded-md p-2 text-foreground"
-          aria-label="Menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen(!open)}
+            className="rounded-md p-2 text-foreground"
+            aria-label="Menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
