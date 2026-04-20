@@ -22,12 +22,12 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/50 mt-10">
+    <footer className="relative border-t border-border/50 mt-10 bg-footer">
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-6 gap-10">
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <img src={logo} alt="Amber Markets" className="h-9 w-auto" />
+            <Link to="/" className="inline-flex items-center gap-2 logo-halo">
+              <img src={logo} alt="Amber Markets" className="h-10 w-auto logo-img" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
               The premium prop trading firm trusted by 48,000+ funded traders worldwide. Trade smart. Trade Amber.

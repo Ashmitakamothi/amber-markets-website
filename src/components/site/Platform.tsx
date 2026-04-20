@@ -10,7 +10,7 @@ const features = [
 
 export function Platform() {
   return (
-    <section id="about" className="py-20 lg:py-28">
+    <section id="about" className="py-20 lg:py-28 bg-surface-alt">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="relative order-2 lg:order-1">
